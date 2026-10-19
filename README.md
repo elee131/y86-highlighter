@@ -6,8 +6,8 @@ Highlights instructions, registers, labels, directives
 (`.pos`, `.align`, `.quad`, ...), immediates, and `#` / `/* */` comments.
 
 ## Try it
-Install y86-highlighter-0.10.vsix 
-From the ... menu of the extensions tab, select "Install from VSIX" and select downloaded vsix file
+1. Install y86-highlighter-0.10.vsix 
+2. From the ... menu of the extensions tab, select "Install from VSIX" and select downloaded vsix file
 
 <img width="581" height="306" alt="Screenshot 2026-10-19 at 12 40 24 PM" src="https://github.com/user-attachments/assets/58056943-fa1a-49c9-a8bf-6279532514c7" />
 
