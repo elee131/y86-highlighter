@@ -13,8 +13,10 @@ Highlights instructions, registers, labels, directives
 
 ## Preview
 Github dark theme
+
 <img width="266" height="343" alt="Screenshot 2026-10-19 at 12 41 24 PM" src="https://github.com/user-attachments/assets/bc4b0ec2-22fe-4aee-b321-e284237627b5" />
 
 
 default VSCode Theme Dark
+
 <img width="313" height="470" alt="Screenshot 2026-10-19 at 12 42 16 PM" src="https://github.com/user-attachments/assets/52a90568-71d7-4c66-8df4-59b0e860b54a" />
