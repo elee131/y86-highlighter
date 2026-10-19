@@ -1,0 +1,27 @@
+{
+  "name": "y86-highlighter",
+  "displayName": "Y86 Syntax Highlighter",
+  "description": "Syntax highlighting for Y86-64 / Y86-32 assembly (CS:APP)",
+  "version": "0.1.0",
+  "publisher": "local",
+  "license": "MIT",
+  "engines": { "vscode": "^1.60.0" },
+  "categories": ["Programming Languages"],
+  "contributes": {
+    "languages": [
+      {
+        "id": "y86",
+        "aliases": ["Y86", "y86"],
+        "extensions": [".ys", ".s"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "y86",
+        "scopeName": "source.y86",
+        "path": "./syntaxes/y86.tmLanguage.json"
+      }
+    ]
+  }
+}

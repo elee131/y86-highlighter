@@ -1,0 +1,33 @@
+# Sum an array
+    .pos 0
+    irmovq stack, %rsp
+    call main
+    halt
+
+    .align 8
+array:
+    .quad 0x000d000d000d
+    .quad 0x00c000c000c0
+
+main:
+    irmovq array, %rdi
+    irmovq $2, %rsi
+    call sum
+    ret
+    mulq %r8, %r9
+    subq 
+
+sum:
+    xorq %rax, %rax
+    andq %rsi, %rsi
+    jmp test
+loop:
+    mrmovq (%rdi), %r10
+    addq %r10, %rax
+
+test:
+    jne loop
+    ret
+
+    .pos 0x200
+stack:

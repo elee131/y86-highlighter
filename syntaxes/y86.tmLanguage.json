@@ -1,0 +1,71 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Y86",
+  "scopeName": "source.y86",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#label-definition" },
+    { "include": "#branch-with-target" },
+    { "include": "#directives" },
+    { "include": "#instructions" },
+    { "include": "#registers" },
+    { "include": "#numbers" },
+    { "include": "#label-reference" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        { "name": "comment.line.number-sign.y86", "match": "#.*$" },
+        { "name": "comment.block.y86", "begin": "/\\*", "end": "\\*/" }
+      ]
+    },
+    "label-definition": {
+      "match": "^\\s*([A-Za-z_.][\\w.]*)\\s*(:)",
+      "captures": {
+        "1": { "name": "entity.name.function.label.y86" },
+        "2": { "name": "punctuation.separator.label.y86" }
+      }
+    },
+    "branch-with-target": {
+      "match": "\\b(jmp|jle|jl|je|jne|jge|jg|call)\\b(?:\\s+([A-Za-z_.][\\w.]*))?",
+      "captures": {
+        "1": { "name": "keyword.control.flow.y86" },
+        "2": { "name": "entity.name.function.label-reference.y86" }
+      }
+    },
+    "directives": {
+      "match": "\\.(pos|align|quad|long|word|byte)\\b",
+      "name": "keyword.control.directive.y86"
+    },
+    "instructions": {
+      "patterns": [
+        {
+          "name": "keyword.control.flow.y86",
+          "match": "\\b(halt|ret)\\b"
+        },
+        {
+          "name": "keyword.other.data-move.y86",
+          "match": "\\b(nop|rrmovq|irmovq|rmmovq|mrmovq|cmovle|cmovl|cmove|cmovne|cmovge|cmovg|pushq|popq)\\b"
+        },
+        {
+          "name": "keyword.operator.arithmetic.y86",
+          "match": "\\b(addq|subq|andq|xorq|mulq|divq|modq)\\b"
+        }
+      ]
+    },
+    "registers": {
+      "name": "variable.language.register.y86",
+      "match": "%(r(ax|cx|dx|bx|sp|bp|si|di|8|9|1[0-4])|e(ax|cx|dx|bx|sp|bp|si|di))\\b"
+    },
+    "numbers": {
+      "patterns": [
+        { "name": "constant.numeric.hex.y86", "match": "\\$?-?\\b0[xX][0-9a-fA-F]+\\b" },
+        { "name": "constant.numeric.decimal.y86", "match": "\\$?-?\\b\\d+\\b" }
+      ]
+    },
+    "label-reference": {
+      "name": "variable.other.label.y86",
+      "match": "\\$?\\b[A-Za-z_.][\\w.]*\\b"
+    }
+  }
+}
